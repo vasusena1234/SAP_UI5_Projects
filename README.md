@@ -32,9 +32,17 @@ A tile-based navigation hub that hosts **three sub-applications** and provides e
 
 #### Result
 
-| Birthday Countdown Timer | Covid-19 Tracker | Vaccination Tracker |
-|---|---|---|
-| ![BirthDayCounter](com.te.Assets/BirthDayCounterApp.gif) | ![CovidTracker](com.te.Assets/CovidTrackerApp.gif) | ![VaccinationTracker](com.te.Assets/VaccinationTrackerApp.gif) |
+**Birthday Countdown Timer**
+
+![BirthDayCounter](com.te.Assets/BirthDayCounterApp.gif)
+
+**Covid-19 Tracker**
+
+![CovidTracker](com.te.Assets/CovidTrackerApp.gif)
+
+**Vaccination Tracker**
+
+![VaccinationTracker](com.te.Assets/VaccinationTrackerApp.gif)
 
 ### 2. `com.te.myportfolio` — Personal Portfolio
 
