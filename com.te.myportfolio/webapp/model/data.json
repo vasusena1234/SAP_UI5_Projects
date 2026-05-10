@@ -1,0 +1,85 @@
+{
+    "name": "Vasu Sena Gunda",
+    "firstName": "Vasu Sena",
+    "lastName": "Gunda",
+    "email": "vasusenagunda@capgemini.com",
+    "designation": "SAP BTP Developer",
+    "phone": "+91 1234 5678",
+    "currentCompany": "Capgemini",
+    "education": [
+        {
+            "type": "Secondary School (Class X)",
+            "percent": "95%",
+            "year": 2017,
+            "college": "Little Flower Grammar High School"
+        },
+        {
+            "type": "Intermediate (Class XII)",
+            "percent": "96.9%",
+            "year": 2019,
+            "college": "Narayana Jr College"
+        },
+        {
+            "type": "Bachelor of Technology (B.Tech)",
+            "percent": "76.3%",
+            "year": 2023,
+            "college": "Gokaraju Rangaraju Institute of Engineering and Technology (GRIET), Hyderabad"
+        }
+    ],
+    "certification": [
+        {
+            "name": "SAP Certified Associate - SAP Cloud Application Programming Model",
+            "link": "https://www.credly.com/badges/f36fb895-e4ed-4747-8fd4-4488b7964e54",
+            "year": 2025
+        },
+        {
+            "name": "SAP Certified Associate - SAP Generative AI Developer",
+            "link": "https://www.credly.com/badges/3c378ac7-af42-4470-9d51-d773aaf28ebb",
+            "year": 2025
+        },
+        {
+            "name": "Discovering SAP Business Technology Platform - Record of Achievement",
+            "link": "https://www.credly.com/badges/23c9c4f2-eabe-4712-a0ec-2b185f289866",
+            "year": 2025
+        },
+        {
+            "name": "Composing and automating with SAP Build the No-Code Way - Record of Achievement",
+            "link": "https://www.credly.com/badges/e3350685-38f1-4e55-b786-6d20915e606b",
+            "year": 2025
+        },
+        {
+            "name": "AWS Amazon Cloud Foundation (ACF)",
+            "link": "https://www.credly.com/badges/6e021387-3851-4382-9b7a-a10a0f368ef1",
+            "year": 2022
+        },
+        {
+            "name": "NPTEL Data Science for Engineers",
+            "link": "https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL21CS69S2358137203026114",
+            "year": 2021
+        }
+    ],
+    "employment": [
+        {
+            "name": "TCS",
+            "projects": [
+                {
+                    "name": "Grower Mgmt",
+                    "client": "Bayer"
+                },
+                {
+                    "name": "Saravana",
+                    "client": "Abbvie."
+                }
+            ]
+        },
+        {
+            "name": "Capgemini",
+            "projects": [
+                {
+                    "name": "SID",
+                    "client": "Coco Cola"
+                }
+            ]
+        }
+    ]
+}

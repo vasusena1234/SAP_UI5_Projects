@@ -1,0 +1,89 @@
+<mvc:View
+    controllerName="com.te.controller.countdown.Countdown"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    xmlns:grid="sap.ui.layout.cssgrid"
+    xmlns:core="sap.ui.core"
+>
+    <Shell>
+        <Page
+            id="countdown"
+            showHeader="false"
+        >
+            <FlexBox
+                height="100px"
+                alignItems="Start"
+                justifyContent="Center"
+            >
+                <grid:CSSGrid
+                    id="grid1"
+                    gridTemplateColumns="1fr"
+                    gridGap="1rem"
+                >
+                    <Image
+                        src="https://as2.ftcdn.net/v2/jpg/03/62/49/87/1000_F_362498756_rT5NWhw6btET0HhntxDfg37rPUTsQC37.jpg"
+                    />
+                    <grid:CSSGrid
+                        id="grid2"
+                        gridTemplateColumns="1fr 1fr 1fr 1fr"
+                        gridGap="1rem"
+                    >
+                        <GenericTile
+                            class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                            header="Days"
+                            press=".press"
+                        >
+                            <TileContent>
+                                <NumericContent
+                                    value="{timer>/days}"
+                                    withMargin="false"
+                                    valueColor="Critical"
+                                />
+                            </TileContent>
+                        </GenericTile>
+                        <GenericTile
+                            class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                            header="Hours"
+                            press=".press"
+                        >
+                            <TileContent>
+                                <NumericContent
+                                    value="{timer>/hours}"
+                                    withMargin="false"
+                                    valueColor="Error"
+                                />
+                            </TileContent>
+                        </GenericTile>
+                        <GenericTile
+                            class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                            header="Minutes"
+                            press=".press"
+                        >
+                            <TileContent>
+                                <NumericContent
+                                    value="{timer>/minutes}"
+                                    withMargin="false"
+                                    valueColor="Good"
+                                />
+                            </TileContent>
+                        </GenericTile>
+                        <GenericTile
+                            class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                            header="Seconds"
+                            press=".press"
+                        >
+                            <TileContent>
+                                <NumericContent
+                                    value="{timer>/seconds}"
+                                    withMargin="false"
+                                />
+                            </TileContent>
+                        </GenericTile>
+                    </grid:CSSGrid>
+                </grid:CSSGrid>
+            </FlexBox>
+        </Page>
+    </Shell>
+</mvc:View>

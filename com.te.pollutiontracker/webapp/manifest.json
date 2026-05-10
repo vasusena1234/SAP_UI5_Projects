@@ -1,0 +1,125 @@
+{
+	"_version": "1.38.0",
+	"sap.app": {
+		"id": "com.te.pollutiontracker",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}"
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"flexEnabled": false,
+		"rootView": {
+			"viewName": "com.te.pollutiontracker.view.Main",
+			"type": "XML",
+			"async": true
+		},
+		"dependencies": {
+			"minUI5Version": "1.60.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {},
+				"sap.f": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "com.te.pollutiontracker.i18n.i18n"
+				}
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+"routing": {
+			"config": {
+				"routerClass": "sap.f.routing.Router",
+				"type": "View",
+				"viewType": "XML",
+				"path": "com.te.pollutiontracker.view",
+				"controlId": "pollution",
+				"transition": "slide",
+				"bypassed": {},
+				"async": true
+			},
+			"routes": [
+			{
+				"pattern": "",
+				"name": "default",
+				"target": [
+					"master"
+				]
+			},
+				{
+					"pattern": ":layout:?",
+					"name": "master",
+					"target": [
+						"master",
+						"detail"
+					]
+				},
+				{
+					"pattern": "detail/{country}/{layout}",
+					"name": "detail",
+					"target": [
+						"master",
+						"detail"
+					]
+				},
+				{
+					"pattern": "detail/{country}/state/{state}/{layout}",
+					"name": "city",
+					"target": [
+						"master",
+						"detail",
+						"city"
+					]
+				}
+			],
+			"targets": {
+				"master": {
+					"name": "Master",
+					"controlAggregation": "beginColumnPages"
+				},
+				"detail": {
+					"name": "Detail",
+					"controlAggregation": "midColumnPages"
+				},
+				"city": {
+					"name": "City",
+					"controlAggregation": "endColumnPages"
+				}
+			}
+		}
+	}
+}

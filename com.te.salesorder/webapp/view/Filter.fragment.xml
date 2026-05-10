@@ -1,0 +1,48 @@
+<core:FragmentDefinition displayBlock="true"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:p="sap.m.plugins"
+    xmlns:core="sap.ui.core">
+
+
+    <fb:FilterBar id="filterbar" persistencyKey="myPersKey" useToolbar="false" search=".onSearch" afterVariantLoad=".onAfterVariantLoad">
+        <fb:filterGroupItems>
+            <fb:FilterGroupItem name="SalesOrder" label="Sales Order" groupName="Group1" visibleInFilterBar="true">
+                <fb:control>
+                    <MultiInput id="SOrd" width="60%" showSuggestion="true" valueHelpRequest=".onValueHelpRequested" suggestionItemSelected=".onSuggestionItemSelected" suggestionRows="{
+				path: '/A_SalesOrder',
+				length: 10
+			}">
+                        <suggestionColumns>
+                            <Column>
+                                <Label text="Sales Order"/>
+                            </Column>
+                            <Column>
+                                <Label text="Sales Order Type"/>
+                            </Column>
+                        </suggestionColumns>
+                        <suggestionRows>
+                            <ColumnListItem>
+                                <Label text="{SalesOrder}" />
+                                <Label text="{SalesOrderType}" />
+                            </ColumnListItem>
+                        </suggestionRows>
+                    </MultiInput>
+                </fb:control>
+            </fb:FilterGroupItem>
+            <fb:FilterGroupItem name="SalesOrderType" label="Sales Order Type" groupName="Group1" visibleInFilterBar="true">
+                <fb:control>
+                    <Input id = "SOrdTy" type="Text" change="onChange"></Input>
+                </fb:control>
+            </fb:FilterGroupItem>
+            <fb:FilterGroupItem name="SalesOrganization" label="Sales Organization" groupName="Group1" visibleInFilterBar="true">
+                <fb:control>
+                    <Input id = "SOrg" type="Text" change="onChange"></Input>
+                </fb:control>
+            </fb:FilterGroupItem>
+        </fb:filterGroupItems>
+    </fb:FilterBar>
+
+
+</core:FragmentDefinition>

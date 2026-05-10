@@ -1,0 +1,105 @@
+{
+	"_version": "1.12.0",
+
+	"sap.app": {
+		"id": "com.te.salesorder",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"applicationVersion": {
+			"version": "${version}"
+		},
+		"sourceTemplate": {
+			"id": "generator-ui5-app",
+			"version": "1.1.0"
+		},
+		"dataSources": {
+			"SalesOrder" : {
+				"uri": "/odata/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/metadata.xml"
+				}
+			}
+		}
+	},
+
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "com.te.salesorder.view.App",
+			"type": "XML",
+			"id": "app"
+		},
+
+		"dependencies": {
+			"minUI5Version": "1.147.2",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+
+		"handleValidation": true,
+
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "com.te.salesorder.i18n.i18n",
+					"supportedLocales": ["en", "de"],
+					"fallbackLocale": "en",
+					"async": true
+				}
+			},
+			"" : {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultBindingMode": "OneTime",
+					"defaultOperationMode" : "Server",
+					"defaultCountMode" : "Request"
+				},
+				"dataSource": "SalesOrder",
+				"preload": true
+			}
+		},
+
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "com.te.salesorder.view",
+				"controlId": "app",
+				"controlAggregation": "pages"
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name": "main",
+					"target": "main"
+				}
+			],
+			"targets": {
+				"main": {
+					"viewId": "main",
+					"viewName": "Main"
+				}
+			}
+		}
+	}
+}

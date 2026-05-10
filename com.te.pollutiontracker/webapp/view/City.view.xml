@@ -1,0 +1,51 @@
+ <mvc:View
+	controllerName="com.te.pollutiontracker.controller.City"
+	displayBlock="true"
+	height="100%"
+	xmlns="sap.m"
+	xmlns:f="sap.f"
+	xmlns:mvc="sap.ui.core.mvc">
+	<f:DynamicPage id="dynamicPageId-city" toggleHeaderOnTitleClick="false">
+		<!-- DynamicPage Title -->
+		<f:title>
+			<f:DynamicPageTitle>
+				<f:heading>
+					<Title text="City Wise Pollution"/>
+				</f:heading>
+			</f:DynamicPageTitle>
+		</f:title>
+
+		<!-- DynamicPage Content -->
+		<f:content>
+			<VBox fitContainer="true">
+			 	<Table
+					id="cityPollutionTable"
+					inset="false"
+					items="{cities>/}"
+					class="sapFDynamicPageAlignContent"
+					width="auto">
+					<columns>
+						<Column width="12em">
+							<Text text="City"/>
+						</Column>
+						<Column	hAlign="End">
+							<Text text="AQI"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem type="Navigation">
+							<cells>
+								<ObjectIdentifier title="{cities>district}"/>
+								<ObjectNumber
+									number="{cities>AQI}"
+									/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</VBox>
+		</f:content>
+
+		
+	</f:DynamicPage>
+</mvc:View>

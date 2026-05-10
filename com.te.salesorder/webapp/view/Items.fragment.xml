@@ -1,0 +1,51 @@
+<core:FragmentDefinition displayBlock="true"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:p="sap.m.plugins"
+    xmlns:core="sap.ui.core">
+
+
+    <Table id="idSalesTable" inset="false" items="{
+				path: '/A_SalesOrder',
+				sorter: {
+					path: 'SalesOrder'
+				}
+			}">
+
+        <infoToolbar>
+            <OverflowToolbar>
+                <Label text="Filtered Sales Orders"/>
+            </OverflowToolbar>
+        </infoToolbar>
+        <columns>
+            <Column width="12em">
+                <Text text="Sales Order" />
+            </Column>
+            <Column demandPopin="true">
+                <Text text="Sales Order Type" />
+            </Column>
+            <Column demandPopin="true">
+                <Text text="Sales Organization" />
+            </Column>
+            <Column demandPopin="true">
+                <Text text="Sold To Party" />
+            </Column>
+            <Column >
+                <Text text="Sales Order Date" />
+            </Column>
+        </columns>
+        <items>
+            <ColumnListItem id="sales" vAlign="Middle">
+                <cells>
+                    <ObjectIdentifier title="{SalesOrder}" text="{SalesOrder}"/>
+                    <Text text="{SalesOrderType}" />
+                    <Text text="{SalesOrganization}" />
+                    <Text text="{SoldToParty}" />
+                    <Text text="{SalesOrderDate}" />
+
+                </cells>
+            </ColumnListItem>
+        </items>
+    </Table>
+</core:FragmentDefinition>

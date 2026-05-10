@@ -1,0 +1,20 @@
+<mvc:View controllerName="com.te.salesorder.controller.Main" displayBlock="true"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:fb="sap.ui.comp.filterbar"
+	xmlns:p="sap.m.plugins"
+	xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core" core:require="{
+		formatter: 'com/te/salesorder/model/formatter'
+	}">
+	<Page title="Sales Order App">
+		<content>
+
+			<l:VerticalLayout id="main" width="100%">
+			</l:VerticalLayout>
+
+
+
+		</content>
+	</Page>
+</mvc:View>

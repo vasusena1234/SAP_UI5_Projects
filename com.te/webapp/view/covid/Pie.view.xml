@@ -1,0 +1,62 @@
+<mvc:View
+    controllerName="com.te.controller.covid.Pie"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    xmlns:grid="sap.ui.layout.cssgrid"
+    xmlns:core="sap.ui.core"
+    xmlns:viz="sap.viz.ui5.controls"
+    xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+    xmlns:viz.data="sap.viz.ui5.data"
+>
+    <Shell>
+        <Page
+            id="pie"
+            showHeader="false"
+        >
+            <viz:VizFrame
+                id="idVizFramepie"
+                uiConfig="{applicationSet:'fiori'}"
+                height='100%'
+                width="100%"
+                vizType='pie'
+            >
+                <viz:dataset>
+                    <viz.data:FlattenedDataset data="{/data/regional}">
+                        <viz.data:dimensions>
+                            <viz.data:DimensionDefinition
+                                name="loc"
+                                value="{loc}"
+                            />
+                        </viz.data:dimensions>
+                        <viz.data:measures>
+                            <viz.data:MeasureDefinition
+                                name="totalConfirmed"
+                                value="{totalConfirmed}"
+                            />
+                        </viz.data:measures>
+                    </viz.data:FlattenedDataset>
+                </viz:dataset>
+
+                <viz:feeds>
+                    <viz.feeds:FeedItem
+                        id='valueAxisFeedpie'
+                        uid="size"
+                        type="Measure"
+                        values="totalConfirmed"
+                    />
+                    <viz.feeds:FeedItem
+                        id='categoryAxisFeedpie'
+                        uid="color"
+                        type="Dimension"
+                        values="loc"
+                    />
+                </viz:feeds>
+                <viz:dependents>
+                    <viz:Popover id="idPopOverpie" />
+                </viz:dependents>
+            </viz:VizFrame>
+        </Page>
+    </Shell>
+</mvc:View>

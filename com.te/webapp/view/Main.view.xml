@@ -1,0 +1,20 @@
+<mvc:View
+    controllerName="com.te.controller.Main"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    core:require="{
+		formatter: 'com/te/model/formatter'
+	}"
+>
+    <Shell>
+        <App id="idAppControl2">
+            <pages>
+                <Page title="{i18n>title}">
+                    <content />
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>

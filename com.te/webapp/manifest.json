@@ -1,0 +1,126 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "com.te",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"applicationVersion": {
+			"version": "${version}"
+		},
+		"sourceTemplate": {
+			"id": "generator-ui5-app",
+			"version": "1.1.0"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "com.te.view.App",
+			"type": "XML",
+			"id": "app"
+		},
+		"dependencies": {
+			"minUI5Version": "1.147.1",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"handleValidation": true,
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "com.te.i18n.i18n",
+					"supportedLocales": [
+						"en",
+						"de"
+					],
+					"fallbackLocale": "en",
+					"async": true
+				}
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "com.te.view",
+				"controlId": "app",
+				"controlAggregation": "pages"
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name": "Tiles",
+					"target": "tileView"
+				},
+				{
+					"pattern": "first",
+					"name": "first",
+					"target": "Countdown"
+				},
+				{
+					"pattern": "second",
+					"name": "second",
+					"target": "Covid"
+				},
+				{
+					"pattern": "second-list",
+					"name": "second-list",
+					"target": "Covid-List"
+				},
+				{
+					"pattern": "second-pie",
+					"name": "second-pie",
+					"target": "Covid-Pie"
+				},
+				{
+					"pattern": "third",
+					"name": "third",
+					"target": "Vacc"
+				}
+			],
+			"targets": {
+				"tileView": {
+					"viewId": "tiles",
+					"viewName": "Tiles"
+				},
+				"Countdown": {
+					"viewId": "countdown.Countdown",
+					"viewName": "countdown.Countdown"
+				},
+				"Covid": {
+					"viewId": "covid.Covid",
+					"viewName": "covid.Covid"
+				},
+				"Covid-List": {
+					"viewId": "covid.List",
+					"viewName": "covid.List"
+				},
+				"Covid-Pie": {
+					"viewId": "covid.Pie",
+					"viewName": "covid.Pie"
+				},
+				"Vacc": {
+					"viewId": "vacc.Vacc",
+					"viewName": "vacc.Vacc"
+				}
+			}
+		}
+	}
+}
